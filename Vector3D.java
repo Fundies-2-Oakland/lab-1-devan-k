@@ -40,7 +40,7 @@ public class Vector3D {
     }
 
     public Vector3D addition(Vector3D vector){
-        return new Vector3D(x + vector.x, y + vector.y, z + vector.z);
+        return new Vector3D(x + vector.getX(), y + vector.getY(), z + vector.getZ());
     }
 
     public Vector3D multiply(double constant){
@@ -48,7 +48,7 @@ public class Vector3D {
     }
 
     public double dotProduct(Vector3D vector){
-        return (x * vector.x) + (y * vector.y) + (z * vector.z);
+        return (x * vector.getX()) + (y * vector.getY()) + (z * vector.getZ());
     }
 
     public double angleBetween(Vector3D vector){
@@ -58,5 +58,12 @@ public class Vector3D {
             throw new IllegalStateException("One of the vector magnitudes is 0");
         }
         return Math.acos(dotProduct(vector) / (thisMagnitude * vectorMagnitude));
+    }
+
+    public Vector3D crossProduct(Vector3D vector){
+        double uX = y * vector.getZ() - z * vector.getY();
+        double uY = z * vector.getX() - x * vector.getZ();
+        double uZ = x * vector.getY() - y * vector.getX();
+        return new Vector3D(uX, uY, uZ);
     }
 }
