@@ -20,4 +20,7 @@ public class Vector3D {
         return z;
     }
 
+    public String toString() {
+        return String.format("(%1$.2f, %2$.2f, %3$.2f)", x, y, z);
+    }
 }
