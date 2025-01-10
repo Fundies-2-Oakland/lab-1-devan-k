@@ -1,8 +1,6 @@
 public class Vector3D {
 
-    private double x;
-    private double y;
-    private double z;
+    private double x, y, z;
 
     public Vector3D(double x, double y, double z){
         this.x = x;
@@ -22,5 +20,12 @@ public class Vector3D {
 
     public String toString() {
         return String.format("(%1$.2f, %2$.2f, %3$.2f)", x, y, z);
+    }
+
+    public double getMagnitude() {
+        double xSqrd = Math.pow(x, 2);
+        double ySqrd = Math.pow(y, 2);
+        double zSqrd = Math.pow(z, 2);
+        return Math.sqrt(xSqrd + ySqrd + zSqrd);
     }
 }
