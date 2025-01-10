@@ -28,4 +28,12 @@ public class Vector3D {
         double zSqrd = Math.pow(z, 2);
         return Math.sqrt(xSqrd + ySqrd + zSqrd);
     }
+
+    public Vector3D normalize(){
+        double magnitude = getMagnitude();
+        if(magnitude == 0){
+            throw new IllegalStateException("Magnitude is 0");
+        }
+        return new Vector3D(x / magnitude, y / magnitude, z / magnitude);
+    }
 }
