@@ -50,4 +50,13 @@ public class Vector3D {
     public double dotProduct(Vector3D vector){
         return (x * vector.x) + (y * vector.y) + (z * vector.z);
     }
+
+    public double angleBetween(Vector3D vector){
+        double thisMagnitude = getMagnitude();
+        double vectorMagnitude = vector.getMagnitude();
+        if(thisMagnitude == 0 || vectorMagnitude == 0){
+            throw new IllegalStateException("One of the vector magnitudes is 0");
+        }
+        return Math.acos(dotProduct(vector) / (thisMagnitude * vectorMagnitude));
+    }
 }
