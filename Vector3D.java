@@ -36,4 +36,12 @@ public class Vector3D {
         }
         return new Vector3D(x / magnitude, y / magnitude, z / magnitude);
     }
+
+    public Vector3D addition(Vector3D vector){
+        return new Vector3D(x + vector.x, y + vector.y, z + vector.z);
+    }
+
+    public Vector3D multiply(double constant){
+        return new Vector3D(x * constant, y * constant, z * constant);
+    }
 }
