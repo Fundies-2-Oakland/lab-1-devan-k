@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 public class Vector3D {
 
     private double x, y, z;
@@ -43,5 +45,9 @@ public class Vector3D {
 
     public Vector3D multiply(double constant){
         return new Vector3D(x * constant, y * constant, z * constant);
+    }
+
+    public double dotProduct(Vector3D vector){
+        return (x * vector.x) + (y * vector.y) + (z * vector.z);
     }
 }
